@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %} 
+{% block bodyblock %} 
+<div class="jumbotron">
+        <img class="rounded-circle account-img" height="50" src="{{user.profilemodel.image.url}}" alt="{{user.username}}  no image" srcset="">
+      
+        <h1><a href="{% url 'blog:viewuser' object.auther.username %}"> {{object.auther}}</a></h1>
+        <p><u>{{object.title}}</u></p>
+        <p>{{object.content}}</p>
+        <p>{{object.date_posted|date:" M d Y "}}</p>
+        
+        {% if  object.auther == user %}
+                
+        <a class="ml-2 btn btn-outline-info" href="{% url 'blog:update' object.id %}">update</a>
+        <a class="ml-2 btn btn-outline-danger" href="{% url 'blog:delete' object.id %}">delete</a>
+
+        {% endif %}
+                
+</div>
+ {% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% block bodyblock %}
+<div class="jumbotron">
+<h2> You have been logged out</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+        Login again ? <a class="ml-2" href="{% url 'usersapp:login' %}">Login</a>
+    </small>
+    </div>
+</div>
+{% endblock %}
